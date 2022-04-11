@@ -1,0 +1,13 @@
+long startTime = System.currentTimeMillis();
+            Scanner sc = new Scanner(System.in);
+            double counter = 0;
+            System.out.println(target);
+            for (String word: target) {
+                String input = sc.next();
+                if (input.equals("esc")) break;
+                if (input.equals(word)) counter++;
+                System.out.print(" ");
+            }
+
+            double time = (System.currentTimeMillis()-startTime)/1000.0;
+            System.out.format("Your typing speed is %.2f", (counter / (time / 60) ));

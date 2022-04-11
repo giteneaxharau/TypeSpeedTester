@@ -1,0 +1,4 @@
+// make file with dictionary(most common words),read file and pick random words to generate text
+// make two text areas one is target one is input, generate text into target
+// take input and validate it with target, make key listener for each space
+// make highlighter using indexes of space bar, validate each char individually and then the whole word after space
