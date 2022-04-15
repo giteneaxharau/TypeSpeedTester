@@ -47,8 +47,6 @@ public class Main {
         gbc.gridwidth = 2;
         gbc.gridy = 2;
         panel.add(startGame, gbc);
-        panel.setBackground(new Color(173, 232, 244));
-
 
         frame.add(panel);
         frame.add(panel, BorderLayout.CENTER);
@@ -94,6 +92,7 @@ public class Main {
             textPane.setText(ref.placeholder);
             textPane.setFocusable(true);
             textPane.requestFocus();
+            startGame.setEnabled(false);
         });
 
         textPane.setEditable(false);
@@ -116,46 +115,52 @@ public class Main {
             String input = "";
             @Override
             public void keyPressed(KeyEvent e) {
-                System.out.println();
                 super.keyTyped(e);
                 //LISTENER FOR SPACES
                 if (e.getKeyCode() == KeyEvent.VK_SPACE){
                     spacePresses += 1;
+                    System.out.println(spacePresses);
                     String targetWord = ref.targetWords.get(spacePresses - 1);
                     String lastInput = input.split(" ")[input.split(" ").length -1];
                     if (targetWord.equals(lastInput)) rightWords++;
                     input += " ";
-                    if (spacePresses == ref.targetWords.size()) {
-                        double timeInSeconds = (System.currentTimeMillis() - ref.startTime)/1000.00;
-                        String result = "You entered " + rightWords+"/" + ref.targetWords.size()+
-                                " in "+ (timeInSeconds/ 60.00) + "minutes. " + "Means your speed is: " +
-                                Math.round(rightWords/(timeInSeconds/60))+ " WPM(words per minute).";
-                        JOptionPane.showMessageDialog(frame, result, "Results: ", JOptionPane.INFORMATION_MESSAGE);
-                        System.exit(0); //CLOSES THE WHOLE PROGRAM
-                    }
                 }else {   //LISTENER FOR ANY CHARACTER
                     char ch = e.getKeyChar();
                     if (Character.isAlphabetic(ch)) input += ch;
                     //HIGHLIGHTER IMPLEMENTATION
-                    if (ref.placeholder.charAt(input.length()-1) != ch) {
-                        try {
+                    try {
+                        if (ref.placeholder.charAt(input.length()-1) != ch){
                             highlighter.addHighlight(input.length()-1, input.length(),
                                     new DefaultHighlighter.DefaultHighlightPainter(Color.RED));
-                        } catch (BadLocationException ex) {
-                            ex.printStackTrace();
-                        }
-                    } else {
-                        try {
+                        } else {
                             highlighter.addHighlight(input.length()-1, input.length(),
                                     new DefaultHighlighter.DefaultHighlightPainter(Color.GREEN));
-                        } catch (BadLocationException ex) {
-                            ex.printStackTrace();
                         }
+                    } catch (BadLocationException ex){
+                        ex.printStackTrace();
                     }
-
+                }
+                if (spacePresses == ref.targetWords.size()) {
+                    double timeInSeconds = (System.currentTimeMillis() - ref.startTime)/1000.00;
+                    String result = "You entered " + rightWords+"/" + ref.targetWords.size()+
+                            " in "+ (timeInSeconds/ 60.00) + "minutes. " + "Means your speed is: " +
+                            Math.round(rightWords/(timeInSeconds/60))+ " WPM(words per minute).";
+                    JOptionPane.showMessageDialog(frame, result, "Results: ", JOptionPane.INFORMATION_MESSAGE);
+                    endGame(textPane,startGame);
+                    ref.placeholder = "";
+                    input = "";
+                    spacePresses = 0;
+                    rightWords = 0;
+                    System.out.println(ref.targetWords.size());
                 }
             }
         });
+    }
+
+    public static void endGame(JTextPane pane, JButton button){
+        button.setEnabled(true);
+        pane.setText("Press start for a new game");
+        pane.setEditable(false);
     }
 }
 
