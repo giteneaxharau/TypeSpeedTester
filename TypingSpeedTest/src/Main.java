@@ -168,7 +168,6 @@ public class Main {
         for (String key : keys) {
             inputMap.put(KeyStroke.getKeyStroke(key), "none");
         }
-        System.out.println("DISABLED");
     }
 }
 
