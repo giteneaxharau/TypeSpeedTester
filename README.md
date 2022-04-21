@@ -8,8 +8,8 @@ This typing speed tester is meant to measure the amount of right words per minut
        
 1. Downloaded 1000 most used words in the english lexicon
 2. Made a `FileReader` and `BufferedReader`. 
-       >Put them in an ArrayList and a While loop to add the new words in said ArrayList.
-       >Enclosed it in a Try & catch.
+       Put them in an ArrayList and a While loop to add the new words in said ArrayList.
+       Enclosed it in a Try & catch.
 3. Made the GUI using `JComponents`.
 4. Coded the functionality of the `JTextPane`.
        Using `.addKeyListener()`.
@@ -54,6 +54,7 @@ Once you click the last space you will be prompted with your results :).
 
 # Preview
 
+> Work in progress
 
 
 
