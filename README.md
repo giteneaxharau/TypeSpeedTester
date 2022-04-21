@@ -33,9 +33,11 @@ This typing speed tester is meant to measure the amount of right words per minut
 # How to use 
 
 <details><summary><b>Open the folder in your prefered IDE (Mine is JetBrains IntelliJ :])</b></summary>
-       ```
+       
+       ```sh
        git clone https://github.com/giteneaxharau/TypeSpeedTester.git /  
        cd TypeSpeedTester
        ```
+       
 </details>
 
