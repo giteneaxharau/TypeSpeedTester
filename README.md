@@ -4,10 +4,12 @@ This typing speed tester is meant to measure the amount of right words per minut
 
 # Development ![Lines of code](https://img.shields.io/tokei/lines/github.com/giteneaxharau/TypeSpeedTester?style=for-the-badge)
 
+<details><summary><b>Development</b></summary>
+       
 1. Downloaded 1000 most used words in the english lexicon
 2. Made a `FileReader` and `BufferedReader`. 
-       Put them in an `ArrayList` and a `While loop` to add the new words in said ArrayList.
-       Enclosed it in a `Try & catch`.
+       Put them in an ArrayList and a While loop to add the new words in said ArrayList.
+       Enclosed it in a Try & catch.
 3. Made the GUI using `JComponents`.
 4. Coded the functionality of the `JTextPane`.
        Using `.addKeyListener()`.
@@ -16,7 +18,18 @@ This typing speed tester is meant to measure the amount of right words per minut
        Else we listen to each character and add a red highlight if it is incorrect 
            and a green one for the opposite.
        If `spacePresses` are equal to the sublist `targetWords` we pop up a `JOptionPane` with the results 
-           and reset everything so you can play again.
+           and reset everything so you can play again. Using Function `endGame`
 5. Added the functionality of the `JButton`.
+       It pops up a JOption pane promting for the amount of words.
+       It starts the time, shuffles the ArrayList using `Collections.shuffle()` 
+       Creates a sublist based on user input.
+       Sets the 'textPane' uneditable and forces focus on it.
+       Disables the button so you cant restart the game.
+       Disables Backspace using Function `disableKeys` as not to mess with indexing of characters.
+6. Styled GUI.
+7. Fixed Bugs.
+</details>
+
+# How to use 
     
 
