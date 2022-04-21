@@ -93,6 +93,7 @@ public class Main {
             textPane.setFocusable(true);
             textPane.requestFocus();
             startGame.setEnabled(false);
+            disableKeys(textPane.getInputMap());//DISABLES BACK_SPACE
         });
 
         textPane.setEditable(false);
@@ -161,6 +162,13 @@ public class Main {
         button.setEnabled(true);
         pane.setText("Press start for a new game");
         pane.setEditable(false);
+    }
+    public static void disableKeys(InputMap inputMap) {
+        String[] keys = {"BACK_SPACE"};
+        for (String key : keys) {
+            inputMap.put(KeyStroke.getKeyStroke(key), "none");
+        }
+        System.out.println("DISABLED");
     }
 }
 
