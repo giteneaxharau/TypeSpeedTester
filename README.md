@@ -2,14 +2,14 @@
 
 This typing speed tester is meant to measure the amount of right words per minute you write(WPM). App is made using Java & Swing/AWT, making possible to have a GUI.
 
-# Development ![Lines of code](https://img.shields.io/tokei/lines/github.com/giteneaxharau/TypeSpeedTester?style=for-the-badge)
+## Development ![Lines of code](https://img.shields.io/tokei/lines/github.com/giteneaxharau/TypeSpeedTester?style=for-the-badge)
 
 <details><summary><b>Development</b></summary>
        
 1. Downloaded 1000 most used words in the english lexicon
 2. Made a `FileReader` and `BufferedReader`. 
-       Put them in an ArrayList and a While loop to add the new words in said ArrayList.
-       Enclosed it in a Try & catch.
+       >Put them in an ArrayList and a While loop to add the new words in said ArrayList.
+       >Enclosed it in a Try & catch.
 3. Made the GUI using `JComponents`.
 4. Coded the functionality of the `JTextPane`.
        Using `.addKeyListener()`.
@@ -30,7 +30,7 @@ This typing speed tester is meant to measure the amount of right words per minut
 7. Fixed Bugs.
 </details>
 
-# How to use 
+## How to use 
 
 <details><summary><b>Open the folder in your prefered IDE (Mine is JetBrains IntelliJ :])</b></summary>
        
@@ -48,7 +48,12 @@ This typing speed tester is meant to measure the amount of right words per minut
 
 Click the `Start Test` button and enter how many words you want (recommended 10-20 for an accurate measurement).
 
-Type as fast as you can without making any mistakes once you click the last space you will be prompted with your results :).
+Type as fast as you can without making any mistakes. 
+
+Once you click the last space you will be prompted with your results :).
+
+# Preview
+
 
 
 
